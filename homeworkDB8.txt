@@ -1,0 +1,55 @@
+select  * from printer
+where color = "y";
+
+
+select Product.model as model, PC.price as price
+from products
+inner join PC
+	on product.model = PC.model
+where Product.maker = "B"
+
+UNION
+
+select Product.model as model, Laptop.price as price
+from Product
+inner join Laptop
+	on Product.model = Laptop.model
+where Product.maker = "B"
+
+UNION
+
+select Product.model as model, Printer.price as price
+from Product
+inner join Printer
+	on Product.model = Printer.model
+where Product.maker = "B";
+
+
+
+select distinct maker
+from Product
+where type = "PC"
+	and maker not in(
+    select maker
+    from Product
+    where type = "Laptop"
+);
+
+
+select distinct Product.maker
+from Product
+inner join PC
+	on Product.model = PC.model
+where PC.speed >= 450;
+
+
+
+select avg(speed) as avg_speed
+from PC;
+    
+
+select Product.maker, avg(Laptop.screen) as ass  -- в данном случае лучше прописать полный alias или можно оставить сокращение?!
+from product
+inner join Laptop
+	on Product.model = Laptop.model
+group by Product.maker;
