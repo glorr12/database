@@ -1,6 +1,6 @@
-from pymongo import MongoClient
 
-client = MongoClient('mongodb+srv://igorfishkov1991_db_user:EP300847@cluster0.ovy4u8e.mongodb.net/')
+
+
 result = client['sample_airbnb']['listingsAndReviews'].aggregate([
     {
         '$match': {
@@ -25,10 +25,9 @@ result = client['sample_airbnb']['listingsAndReviews'].aggregate([
 
 
 
-from pymongo import MongoClient
 
 
-client = MongoClient('mongodb+srv://igorfishkov1991_db_user:EP300847@cluster0.ovy4u8e.mongodb.net/')
+
 result = client['sample_mflix']['movies'].aggregate([
     {
         '$match': {
