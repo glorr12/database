@@ -11,7 +11,7 @@ result = client['sample_data']['restaurants'].find(
 )
 
 
-# ------------------------------------------
+# -------------------------------------------
 
 result = client['sample_data']['restaurants'].aggregate([
     {
